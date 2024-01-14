@@ -37,5 +37,19 @@ router.post('/', (req, res) => {
 // PUT
 
 // DELETE
+router.delete('/', (req, res) => {
+    console.log('In DELETE request');
+    //DELETE query text
+    let queryText = 'DELETE FROM "to_do_list" WHERE id = $1;';
+    let queryArgs = [req.body.id];
+    pool.query(queryText, queryArgs)
+    .then((result) => {
+        console.log('Task deleted from DB', req.body);
+        res.sendStatus(200);
+    }).catch((err) => {
+        console.log('ERROR in DELETE DB Query:', err);
+        res.sendStatus(500);
+    });
+});
 
 module.exports = router;
