@@ -35,7 +35,20 @@ router.post('/', (req, res) => {
 });
 
 // PUT
-
+router.put('/', (req, res) => {
+    console.log('In PUT request');
+    //PUT query text
+    let queryText = 'UPDATE "to_do_list" SET completed = TRUE WHERE id = $1;';
+    let queryArgs = [req.body.id];
+    pool.query(queryText, queryArgs)
+    .then((result) => {
+        console.log('Task updated to completed in DB', req.body);
+        res.sendStatus(200);
+    }).catch((err) => {
+        console.log('ERROR in completion update to DB Query:', err);
+        res.sendStatus(500);
+    });
+})
 // DELETE
 router.delete('/', (req, res) => {
     console.log('In DELETE request');
