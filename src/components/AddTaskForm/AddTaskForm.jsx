@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {useState} from 'react';
-import './AddTaskForm.css';
+// import './AddTaskForm.css';
 
 function AddTaskForm (props) {
 
@@ -26,8 +26,9 @@ function AddTaskForm (props) {
         <>
         <h1>Add A Task!</h1>
         <form onSubmit={submitTaskForm}>
-            <label for="task">Task:</label><br />
-            <input id="taskInput" placeholder="Fight the gods" onChange={(event) => setTaskValue(event.target.value)} value={taskValue}></input>
+            <label>Task:
+                <input id="taskInput" placeholder="Fight the gods" onChange={(event) => setTaskValue(event.target.value)} value={taskValue}></input>
+            </label>
             <button type="submit">Add</button>
         </form>
         </>

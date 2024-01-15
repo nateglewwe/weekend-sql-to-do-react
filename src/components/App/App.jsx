@@ -1,5 +1,8 @@
-import {useState} from 'react';
-import AddTaskForm from '../AddTaskForm/AddTaskForm.jsx'
+import {useState, useEffect} from 'react';
+import axios from 'axios';
+import './App.css'
+import AddTaskForm from '../AddTaskForm/AddTaskForm.jsx';
+import TaskList from '../TaskList/TaskList.jsx';
 
 function App () {
   let [taskList, setTaskList] = useState([])
@@ -24,8 +27,9 @@ function App () {
   
   return (
     <div>
-      <h1>TO DO APP</h1>
+      <h1 className="banner">TO DO APP</h1>
       <AddTaskForm refreshTaskListCallback={refreshTaskList}/>
+      <TaskList taskListArray={taskList}/>
     </div>
   );
 
