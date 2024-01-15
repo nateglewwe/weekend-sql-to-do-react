@@ -1,11 +1,11 @@
 .banner {
+  font-family: Comic Sans MS, Comic Sans, cursive;
   text-align: center;
   background-color:paleturquoise;
   color: black;
-  /* border-style: solid;
-  border-width: 5px;
-  border-color: cyan; */
-  margin: 0%;
+  /* border: solid cyan 5px; */
+  border-radius: 10px;
+  margin: 10px;
   padding: 30px;
 }
 

@@ -1,0 +1,15 @@
+.taskListBanner {
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    background-color:palevioletred;
+    color: black;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 30px;
+}
+
+.cardField {
+    margin-top: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: left;
+  }

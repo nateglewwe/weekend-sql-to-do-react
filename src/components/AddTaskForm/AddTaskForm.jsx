@@ -1,13 +1,13 @@
 import axios from 'axios';
 import {useState} from 'react';
-// import './AddTaskForm.css';
+import './AddTaskForm.css';
 
 function AddTaskForm (props) {
 
     const [taskValue, setTaskValue] = useState('')
 
     function submitTaskForm(event) {
-        event.preventdefault();
+        event.preventDefault();
 
         //pakage data
         let newTask = {task: taskValue};
@@ -23,7 +23,7 @@ function AddTaskForm (props) {
     };
 
     return (
-        <>
+        <div className="formField">
         <h1>Add A Task!</h1>
         <form onSubmit={submitTaskForm}>
             <label>Task:
@@ -31,7 +31,7 @@ function AddTaskForm (props) {
             </label>
             <button type="submit">Add</button>
         </form>
-        </>
+        </div>
     )
 }
 

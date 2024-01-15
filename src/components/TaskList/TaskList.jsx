@@ -1,13 +1,15 @@
+import Card from '../Card/Card.jsx';
+import './TaskList.css';
 function TaskList (props) {
 
     return(
         <>
-        <h1>Task List</h1>
-        {/* <div>
+        <h1 className="taskListBanner">Task List</h1>
+        <div className="cardField">
             {(props.taskListArray).map((task, taskIndex) => {
                 return <Card key={taskIndex} cardData={task} />
             })}
-        </div> */}
+        </div>
         </>
     )
 }
