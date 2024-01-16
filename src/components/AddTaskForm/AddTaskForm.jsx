@@ -27,7 +27,7 @@ function AddTaskForm (props) {
         <h1>Add A Task!</h1>
         <form onSubmit={submitTaskForm}>
             <label>Task:
-                <input id="taskInput" placeholder="Fight the gods" onChange={(event) => setTaskValue(event.target.value)} value={taskValue}></input>
+                <input id="taskInput" placeholder="Fight the gods" onChange={(event) => setTaskValue(event.target.value)} value={taskValue}/>
             </label>
             <button type="submit">Add</button>
         </form>

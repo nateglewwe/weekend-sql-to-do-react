@@ -16,3 +16,8 @@
     margin-top: 8px;
     display: flex;
 }
+
+.card.completed {
+    background-color: lightgreen;
+    border-color: darkgreen;
+}

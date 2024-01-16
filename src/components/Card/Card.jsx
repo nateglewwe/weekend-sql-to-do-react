@@ -28,12 +28,23 @@ function Card (props) {
             console.error('ERROR in client DELETE:', err);
         });
     }
+    if (props.cardData.completed===true) {
+        return(
+            <div className='card completed'>
+            <p>{props.cardData.task}</p>
+                <div className='buttonField'>
+                    <input type="button" value="✅Complete" disabled onClick={() => clickComplete(props.cardData.id)}/>
+                    <input type="button" value="Delete" onClick={() => clickDelete(props.cardData.id)}/>
+                </div>
+            </div>
+        );
+    }
     return(
         <div className='card'>
         <p>{props.cardData.task}</p>
         <div className='buttonField'>
-          <button onClick={() => clickComplete(props.cardData.id)}>Complete</button>
-          <button onClick={() => clickDelete(props.cardData.id)}>Delete</button>
+          <input type="button" value="Complete" onClick={() => clickComplete(props.cardData.id)}/>
+          <input type="button" value="Delete" onClick={() => clickDelete(props.cardData.id)}/>
           </div>
       </div>
     );
