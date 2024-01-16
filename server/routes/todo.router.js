@@ -35,11 +35,11 @@ router.post('/', (req, res) => {
 });
 
 // PUT
-router.put('/', (req, res) => {
+router.put('/:id', (req, res) => {
     console.log('In PUT request');
     //PUT query text
     let queryText = 'UPDATE "to_do_list" SET completed = TRUE WHERE id = $1;';
-    let queryArgs = [req.body.id];
+    let queryArgs = [req.params.id];
     pool.query(queryText, queryArgs)
     .then((result) => {
         console.log('Task updated to completed in DB', req.body);
@@ -50,11 +50,11 @@ router.put('/', (req, res) => {
     });
 })
 // DELETE
-router.delete('/', (req, res) => {
+router.delete('/:id', (req, res) => {
     console.log('In DELETE request');
     //DELETE query text
     let queryText = 'DELETE FROM "to_do_list" WHERE id = $1;';
-    let queryArgs = [req.body.id];
+    let queryArgs = [req.params.id];
     pool.query(queryText, queryArgs)
     .then((result) => {
         console.log('Task deleted from DB', req.body);

@@ -10,6 +10,7 @@ function App () {
     axios.get('/api/todo')
     .then((response) => {
       console.table(response.data);
+      console.log(response.data);
       setTaskList(response.data);
     })
     .catch((err) => {
@@ -29,7 +30,7 @@ function App () {
     <div>
       <h1 className="banner">TO DO APP</h1>
       <AddTaskForm refreshTaskListCallback={refreshTaskList}/>
-      <TaskList taskListArray={taskList}/>
+      <TaskList taskListArray={taskList} refreshTaskListCallback={refreshTaskList}/>
     </div>
   );
 

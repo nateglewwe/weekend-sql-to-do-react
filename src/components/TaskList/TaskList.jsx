@@ -7,7 +7,7 @@ function TaskList (props) {
         <h1 className="taskListBanner">Task List</h1>
         <div className="cardField">
             {(props.taskListArray).map((task, taskIndex) => {
-                return <Card key={taskIndex} cardData={task} />
+                return <Card key={taskIndex} cardData={task} refreshTaskListCallback={props.refreshTaskListCallback}/>
             })}
         </div>
         </>
