@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 import axios from 'axios';
-import './App.css'
+import styles from './App.module.css'
 import AddTaskForm from '../AddTaskForm/AddTaskForm.jsx';
 import TaskList from '../TaskList/TaskList.jsx';
 
@@ -28,7 +28,7 @@ function App () {
   
   return (
     <div>
-      <h1 className="banner">TO DO APP</h1>
+      <h1 className={styles.banner}>TO DO APP</h1>
       <AddTaskForm refreshTaskListCallback={refreshTaskList}/>
       <TaskList taskListArray={taskList} refreshTaskListCallback={refreshTaskList}/>
     </div>

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {useState} from 'react';
-import './Card.css';
+import styles from './Card.module.css';
 
 function Card (props) {
 
@@ -30,9 +30,9 @@ function Card (props) {
     }
     if (props.cardData.completed===true) {
         return(
-            <div className='card completed'>
+            <div className={styles.cardCompleted}>
             <p>{props.cardData.task}</p>
-                <div className='buttonField'>
+                <div className={styles.buttonField}>
                     <input type="button" value="✅Complete" disabled onClick={() => clickComplete(props.cardData.id)}/>
                     <input type="button" value="Delete" onClick={() => clickDelete(props.cardData.id)}/>
                 </div>
@@ -40,9 +40,9 @@ function Card (props) {
         );
     }
     return(
-        <div className='card'>
+        <div className={styles.card}>
         <p>{props.cardData.task}</p>
-        <div className='buttonField'>
+        <div className={styles.buttonField}>
           <input type="button" value="Complete" onClick={() => clickComplete(props.cardData.id)}/>
           <input type="button" value="Delete" onClick={() => clickDelete(props.cardData.id)}/>
           </div>

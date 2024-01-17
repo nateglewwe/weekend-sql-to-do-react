@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {useState} from 'react';
-import './AddTaskForm.css';
+import styles from './AddTaskForm.module.css';
 
 function AddTaskForm (props) {
 
@@ -23,7 +23,7 @@ function AddTaskForm (props) {
     };
 
     return (
-        <div className="formField">
+        <div className={styles.formField}>
         <h1>Add A Task!</h1>
         <form onSubmit={submitTaskForm}>
             <label>Task:

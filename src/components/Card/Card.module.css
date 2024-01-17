@@ -17,7 +17,16 @@
     display: flex;
 }
 
-.card.completed {
+.cardCompleted {
+    font-family: Comic Sans MS, Comic Sans, cursive;
     background-color: lightgreen;
-    border-color: darkgreen;
+    border: 3px solid darkgreen;
+    border-radius: 10px;
+    /* height: 175px; */
+    width: 175px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 10px;
 }
