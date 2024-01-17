@@ -28,8 +28,10 @@ function Card (props) {
             console.error('ERROR in client DELETE:', err);
         });
     }
-    if (props.cardData.completed===true) {
-        return(
+
+    return(
+    props.cardData.completed===true ? 
+        
             <div className={styles.cardCompleted}>
             <p>{props.cardData.task}</p>
                 <div className={styles.buttonField}>
@@ -37,17 +39,40 @@ function Card (props) {
                     <input type="button" value="Delete" onClick={() => clickDelete(props.cardData.id)}/>
                 </div>
             </div>
-        );
-    }
-    return(
-        <div className={styles.card}>
-        <p>{props.cardData.task}</p>
-        <div className={styles.buttonField}>
-          <input type="button" value="Complete" onClick={() => clickComplete(props.cardData.id)}/>
-          <input type="button" value="Delete" onClick={() => clickDelete(props.cardData.id)}/>
-          </div>
-      </div>
+        
+    :
+        
+            <div className={styles.card}>
+            <p>{props.cardData.task}</p>
+            <div className={styles.buttonField}>
+            <input type="button" value="Complete" onClick={() => clickComplete(props.cardData.id)}/>
+            <input type="button" value="Delete" onClick={() => clickDelete(props.cardData.id)}/>
+            </div>
+        </div>
+        
     );
 };
 
 export default Card;
+
+//ORIGINAL CONDITIONAL IF STATEMENT, BEFORE SWITCHING TO TERNARY OPERATOR SYNTAX FOR CARD FUNCTION RETURN
+// if (props.cardData.completed===true) {
+//     return(
+//         <div className={styles.cardCompleted}>
+//         <p>{props.cardData.task}</p>
+//             <div className={styles.buttonField}>
+//                 <input type="button" value="✅Complete" disabled onClick={() => clickComplete(props.cardData.id)}/>
+//                 <input type="button" value="Delete" onClick={() => clickDelete(props.cardData.id)}/>
+//             </div>
+//         </div>
+//     );
+// }
+// return(
+//     <div className={styles.card}>
+//     <p>{props.cardData.task}</p>
+//     <div className={styles.buttonField}>
+//       <input type="button" value="Complete" onClick={() => clickComplete(props.cardData.id)}/>
+//       <input type="button" value="Delete" onClick={() => clickDelete(props.cardData.id)}/>
+//       </div>
+//   </div>
+// );
