@@ -8,7 +8,7 @@
 }
 
 .cardField {
-    margin-top: 10px;
+    margin: 10px;
     display: flex;
     flex-flow: row wrap;
     justify-content: left;

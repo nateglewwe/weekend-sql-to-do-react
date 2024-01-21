@@ -1,6 +1,7 @@
 import axios from 'axios';
 import {useState} from 'react';
 import styles from './Card.module.css';
+import Button from '@mui/material/Button';
 
 function Card (props) {
 
@@ -32,21 +33,19 @@ function Card (props) {
     return(
     props.cardData.completed===true ? 
         
-            <div className={styles.cardCompleted}>
-            <p>{props.cardData.task}</p>
-                <div className={styles.buttonField}>
-                    <input type="button" value="✅Complete" disabled onClick={() => clickComplete(props.cardData.id)}/>
-                    <input type="button" value="Delete" onClick={() => clickDelete(props.cardData.id)}/>
-                </div>
-            </div>
-        
-    :
-        
-            <div className={styles.card}>
-            <p>{props.cardData.task}</p>
+        <div className={styles.cardCompleted}>
+        <p>{props.cardData.task}</p>
             <div className={styles.buttonField}>
-            <input type="button" value="Complete" onClick={() => clickComplete(props.cardData.id)}/>
-            <input type="button" value="Delete" onClick={() => clickDelete(props.cardData.id)}/>
+                <Button variant="contained" color="success" size="small" disabled onClick={() => clickComplete(props.cardData.id)}>✅Complete</Button>
+                <Button variant="contained" color="error" size="small" onClick={() => clickDelete(props.cardData.id)}>Delete</Button>
+            </div>
+        </div>
+    :
+        <div className={styles.card}>
+        <p>{props.cardData.task}</p>
+            <div className={styles.buttonField}>
+                <Button variant="contained" color="success" size="small" onClick={() => clickComplete(props.cardData.id)}>Complete</Button>
+                <Button variant="contained" color="error" size="small" onClick={() => clickDelete(props.cardData.id)}>Delete</Button>
             </div>
         </div>
         

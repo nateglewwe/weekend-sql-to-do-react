@@ -6,7 +6,7 @@ const pool = require('../modules/pool.js');
 router.get('/', (req, res) => {
     console.log('In GET request');
     //GET query text
-    let queryText = 'SELECT * from "to_do_list";'; //Could add ORDER BY "name" here or something if desired
+    let queryText = 'SELECT * from "to_do_list" ORDER BY "completed" ASC;';
     //DB Query
     pool.query(queryText)
     .then((result) => {
@@ -48,7 +48,8 @@ router.put('/:id', (req, res) => {
         console.log('ERROR in completion update to DB Query:', err);
         res.sendStatus(500);
     });
-})
+});
+
 // DELETE
 router.delete('/:id', (req, res) => {
     console.log('In DELETE request');

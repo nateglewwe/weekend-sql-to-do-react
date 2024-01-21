@@ -1,19 +1,19 @@
 .card {
     font-family: Comic Sans MS, Comic Sans, cursive;
-    background-color: lightgray;
-    border: 3px solid darkgray;
+    background-color: palegoldenrod;
+    border: 3px solid gold;
     border-radius: 10px;
     /* height: 175px; */
-    width: 175px;
+    /* width: 175px; */
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    margin: 10px 10px;
+    /* margin: 10px 10px; */
 }
 
 .buttonField {
-    margin-top: 8px;
+    margin-bottom: 6px;
     display: flex;
 }
 
@@ -23,10 +23,10 @@
     border: 3px solid darkgreen;
     border-radius: 10px;
     /* height: 175px; */
-    width: 175px;
+    /* width: 175px; */
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    margin: 10px 10px;
+    /* margin: 10px 10px; */
 }
