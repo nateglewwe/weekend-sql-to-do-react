@@ -23,7 +23,7 @@ Use the code in the `database.sql` file to create the initial database, tables, 
 - Start postgres if not running already by using opening up the [Postgres.app](https://postgresapp.com), or if using [Homebrew](https://brew.sh) you can use the command `brew services start postgresql`.
 - Run `npm run server` to start the server.
 - Run `npm run client` to start the client.
-- Navigate to `localhost:5001`.
+- Navigate to `localhost:5173`.
 
 ## Built With
 
